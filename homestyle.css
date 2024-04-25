@@ -1,8 +1,8 @@
 .dancing-script-logo {
-  font-family: "Dancing Script", cursive;
-  font-optical-sizing: auto;
-  font-weight: 500px;
-  font-style: normal;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 * {
@@ -10,13 +10,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    font-family: Dancing Script, sans-serif;
-    background-color: #F0EBE3;
+    font-family: helvetica, sans-serif;
+    background-color: #f0ebe3;
 }
+
 header {
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
@@ -25,19 +27,31 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-}
 .hero h2 {
-    color: #322C2B;
+    color: #322c2b;
 }
+
 .logo h1 {
+    font-family: "Dancing Script", cursive;
+    font-weight: bolder;
+    font-size: 45px;
     color: #693e23;
     margin-left: 20px;
 }
+
 .logo-image {
-    width: 200px;
+    width: 300px;
     height: auto;
 }
+
+header,
+nav ul li a {
+    font-family: helvetica, cursive;
+    font-weight: bold;
+}
+
 nav {
     color: #693e23;
     margin-left: 20px;
@@ -54,8 +68,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #693e23;
+    color: #76453b;
     font-family: Arial, sans-serif;
+    transition: text-decoration 0.3s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #322c2b;
 }
 
 .hero {
@@ -76,47 +96,96 @@ nav ul li a {
     display: inline-block;
     background-color: #693e23;
     color: #fff;
-    padding: 10px 20px;
+    padding: 15px 30px;
     border-radius: 5px;
     text-decoration: none;
+    font-size: 20px;
 }
 
 .btn:hover {
     background-color: #4b2718;
 }
 
-/* Gallery Styles */
-.gallery {
-    width: 80%;
+.slider {
+    width: 100%;
+    height: 100vh;
+    position: relative; /* Add position relative */
+}
+
+.slider .controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+}
+
+.slider .controls > div {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+     z-index: 3; 
+}
+.slider .wrapper {
+    width: 100%;
+    height: 100%;
     display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 20px;
-    margin-top: 40px;
-    margin: 0px auto 40px;
-    padding: 10px; /* Add padding to prevent images from sticking to the edge */
-    align-items: center; /* Center images vertically */
-    justify-content: flex-start; /* Start from the beginning of the container */
+    position: relative; 
 }
 
-.gallery img {
-    max-width: 30%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    cursor: pointer; /* Add cursor pointer to indicate clickable */
+.slider .wrapper .left,
+.slider .wrapper .right {
+    width: 50%;
+    overflow: hidden;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add box shadow on hover for better visual feedback */
+.slider .wrapper .left > div,
+.slider .wrapper .right > div {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-in-out;
+}
+
+.slider .wrapper .left > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 100px 0px 50px;
+}
+
+.slider .wrapper .left > div h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.slider .wrapper .left > div p {
+    color: #555;
+    font-size: 18px;
+}
+
+.slider .wrapper .right > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .wrapper .right div:nth-child(1) {
+    margin-top: -400vh;
 }
 
 footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #AF8260;
-  color: white;
-  text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-family: helvetica, cursive;
+    font-weight: bold;
+    background-color: #e9c7a9;
+    color: #76453b;
+    text-align: center;
 }
