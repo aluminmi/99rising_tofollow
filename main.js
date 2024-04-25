@@ -1,13 +1,13 @@
 let slider = document.querySelector(".slider");
 let currentSlide = 0;
 let totalSlides = slider.querySelectorAll(".wrapper .left > div").length - 1;
-let slideInterval = setInterval(nextSlide, 4000); // Change slide every 5 seconds
+let slideInterval = setInterval(nextSlide, 4000); 
 
 function nextSlide() {
     if (currentSlide === totalSlides) {
-        currentSlide = 0; // Reset to the first slide if reached the end
+        currentSlide = 0;    
     } else {
-        currentSlide++; // Move to the next slide
+        currentSlide++; 
     }
     updateSlide();
 }
