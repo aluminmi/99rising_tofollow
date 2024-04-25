@@ -87,10 +87,13 @@ nav ul li a {
 
 /* Gallery Styles */
 .gallery {
+    width: 80%;
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 20px;
     margin-top: 40px;
+    margin: 0px auto 40px;
     padding: 10px; /* Add padding to prevent images from sticking to the edge */
     align-items: center; /* Center images vertically */
     justify-content: flex-start; /* Start from the beginning of the container */
