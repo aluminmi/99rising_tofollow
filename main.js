@@ -1,4 +1,3 @@
-let slider = document.querySelector(".slider");
 let currentSlide = 0;
 let totalSlides = slider.querySelectorAll(".wrapper .left > div").length - 1;
 let slideInterval = setInterval(nextSlide, 4000); 

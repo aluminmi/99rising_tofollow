@@ -189,3 +189,209 @@ footer {
     color: #76453b;
     text-align: center;
 }
+
+.about {
+    background-color: #f9f6f4;
+    padding: 40px;
+    margin-top: 80px; /* Adjusted margin-top to avoid header overlap */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+}
+
+.about h2 {
+    font-size: 24px;
+    color: #693e23;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.business-info,
+.owner-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.business-image,
+.owner-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.business-image img,
+.owner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.business-details,
+.owner-details {
+    flex: 1;
+}
+
+.business-details h3,
+.owner-details h3 {
+    font-size: 20px;
+    color: #693e23;
+    margin-bottom: 10px;
+}
+
+.separator {
+    width: 5px;
+    height: 80px; /* Adjust height as needed */
+    background-color: #f0ebe3; /* Very light beige color */
+    margin: 0 20px; /* Adjust margin as needed */
+}
+
+.services {
+    background-color: #f9f6f4;
+    padding: 40px;
+    margin-top: 80px; /* Adjusted margin-top to avoid header overlap */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    text-align: center; /* Center the content */
+}
+
+.services h2 {
+    font-size: 24px;
+    color: #693e23;
+    margin-bottom: 20px;
+}
+
+.service-category {
+    margin-bottom: 30px;
+}
+
+.service-link {
+    text-decoration: none;
+    color: #693e23;
+}
+
+.service-link:hover {
+    text-decoration: underline beige; /* Beige underline on hover */
+}
+
+.service-category h3 {
+    font-size: 30px; /* Increased font size */
+    color: #693e23;
+    margin-bottom: 10px;
+}
+
+.service-type {
+    display: inline-block;
+    margin-right: 20px;
+    max-width: 300px; /* Maximize width */
+    height: 50px;
+}
+
+.service-type img {
+    width: 100%; /* Make images fill the container */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.service-type p {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+}
+
+.service-details {
+    padding: 40px;
+    padding-top: 100px;
+    position: relative;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.75); /* White with 75% transparency */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+.service-details:hover .service-item:not(:hover) {
+    filter: brightness(80%); /* Darken non-hovered items on parent hover */
+}
+
+.service-item:hover {
+    transform: scale(1.05); /* Increase size on hover */
+}
+
+.service-details::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Dark overlay color */
+    border-radius: 20px;
+    pointer-events: none; /* Allow mouse interactions to pass through */
+    transition: opacity 0.3s ease; /* Add transition for opacity */
+    opacity: 0; /* Initially transparent */
+}
+
+.service-details:hover::before {
+    opacity: 1; /* Show overlay on parent hover */
+}
+
+.service-image {
+    width: 200px; /* Adjust image width as needed */
+    height: 200px; /* Adjust image height as needed */
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease; /* Fade effect */
+}
+
+.service-image:hover img {
+    opacity: 0.5; /* Fading effect on hover */
+}
+
+.service-description {
+    width: calc(100% - 240px); /* Adjust width based on image size and spacing */
+}
+
+.service-description h2 {
+    font-size: 24px;
+    color: #693e23;
+    margin-bottom: 10px;
+}
+
+.service-description p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
