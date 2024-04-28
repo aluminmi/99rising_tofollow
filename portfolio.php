@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,23 +22,16 @@
         <main>
             <section class="hero">
                 <img src="logo.png" alt="Logo" class="logo-image">
-                <h2>See our works, and think:</h2>
-                <h2>I can be next</h2>
+                <h2>See our works on our satisfied customers:</h2>
                 <a href="#" class="btn">Book an Appointment</a>
             </section>
 
-            <section class="gallery" id="hair"> <! -- change class to slide_gallery -->
-                <img src="nail-art-1.jpg" alt="Nail Art 1">
-                <img src="nail-art-2.jpg" alt="Nail Art 2">
-                <img src="hair-1.jpg" alt="Hair Service 1">
-            </section>
+            <?php
 
-            <section class="gallery" id="nails"> <! -- change class to slide_gallery -->
-                <img src="nail-art-1.jpg" alt="Nail Art 1">
-                <img src="nail-art-2.jpg" alt="Nail Art 2">
-                <img src="hair-1.jpg" alt="Hair Service 1">
-            </section>
+            require('portfolioslide.html');
+            ?>
         </main>
+
         <footer>
             <p>&copy; <?php echo date("Y"); ?> Kristine's Beauty Station. All rights reserved.</p>
         </footer>
