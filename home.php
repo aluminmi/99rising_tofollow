@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
             <h1>Kristine's Beauty Station</h1>
         </div>
         <nav>
-            <?php require 'navigation.php'; ?>
+            <?php include 'navigation.php'; ?>
         </nav>
     </header>
     <main>
@@ -536,6 +536,9 @@
 
             if (starFormValue != 0 && (nameValue != 'Anonymous' || reviewValue != 'Has not given any review description for the food stall.')) {
                 addedRev++;
+                alert("Review has been submitted");
+                closeLightbox();
+                //document.querySelector('.lightbox-close').click();
                 placingNames(nameValue);
                 placingReview(reviewValue);
                 placingStar(starFormValue);
@@ -546,8 +549,8 @@
                 starColor3();
                 totalStar();
                 totalstarColor();
-                closeLightbox(); 
                 resize();
+
               } else {
                 alert("Pick Your Rating and Write your Name or Review");
               }
