@@ -16,14 +16,7 @@
             <h2>Kristine's Beauty Station</h2>
         </div>
         <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="#">Book</a></li>
-            </ul>
+            <?php include 'navigation.php'; ?>
         </nav>
     </header>
 
