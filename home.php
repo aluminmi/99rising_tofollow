@@ -53,13 +53,19 @@
                 </div>
             </div>
         </div>
+
+        <br><br><br>
         <!-- Whole Review Page -->
+        <div class = "title">
+                 <label class="reviewlabel">Reviews</label>
+        </div>
+        <br><br><br>
         <div class="Wholepage">
             <div class="ReviewsInfoBox" id="RIB">
                 <div class="ReviewsBox" id="reviewsBox">
-                    <div>
-                        <label class="reviewlabel">Reviews</label>
-                        <label class="totalreviewers">Total Reviewers: <em style="font-size: 20" id="totalReviewLabel">10</em></label>
+                    <!-- New Review Entry -->
+                    <div id="newReviewEntry" style="display: none;">
+                        <h2>New Entry</h2>
                     </div>
                     <div class="reviews">
                         <div class="reviewstarname">
@@ -179,103 +185,400 @@
     </footer>
 
     <script>
-        // SLIDESHOW
-        let currentSlide = 0;
-        let totalSlides = document.querySelectorAll(".slider .wrapper .left > div").length - 1;
-        let slideInterval;
+       // SLIDESHOW
+    let currentSlide = 0;
+    let totalSlides = document.querySelectorAll(".slider .wrapper .left > div").length - 1;
+    let slideInterval;
 
-        function nextSlide() {
-            if (currentSlide === totalSlides) {
-                currentSlide = 0;    
-            } else {
-                currentSlide++; 
-            }
-            updateSlide();
+    function nextSlide() {
+        if (currentSlide === totalSlides) {
+            currentSlide = 0;
+        } else {
+            currentSlide++;
         }
+        updateSlide();
+    }
 
-        function updateSlide() {
-            document.querySelector(".slider .wrapper .left div").style.marginTop = (currentSlide * -100) + 'vh';
-            document.querySelector(".slider .wrapper .right div").style.marginTop = ((totalSlides - currentSlide) * -100) + 'vh';
+    function updateSlide() {
+        document.querySelector(".slider .wrapper .left div").style.marginTop = (currentSlide * -100) + 'vh';
+        document.querySelector(".slider .wrapper .right div").style.marginTop = ((totalSlides - currentSlide) * -100) + 'vh';
+    }
+
+    nextSlide();
+    slideInterval = setInterval(nextSlide, 3000);
+    document.querySelector(".slider").addEventListener("mouseover", function () {
+        clearInterval(slideInterval);
+    });
+    document.querySelector(".slider").addEventListener("mouseout", function () {
+        slideInterval = setInterval(nextSlide, 3000);
+    });
+
+
+  /* Form */
+    function showLightbox() {
+      var lightbox = document.getElementById('lightbox');
+      lightbox.style.opacity = 0;
+      lightbox.style.display = 'flex';
+      var distance = -100;
+      var interval = setInterval(function() {
+      distance += 5;
+      lightbox.style.transform = 'translateY(' + distance + 'px)';
+      lightbox.style.opacity = parseFloat(lightbox.style.opacity) + 0.05;
+      if (distance >= 0) {
+        clearInterval(interval);
+      }
+      }, 10);
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    function Exit() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    /* Hearts and Smiles*/
+    var hearts = [];
+    var smiles = [];
+
+    for (var i = 1; i <= 3; i++) {
+      var heart = document.querySelector('#heartsymbol' + i);
+      var smile = document.querySelector('#smilesymbol' + i);
+      
+      if (heart) {
+        hearts.push(heart);
+      }
+      
+      if (smile) {
+        smiles.push(smile);
+      }
+    }
+
+    function handleClick() {
+      this.classList.toggle('clicked');
+      var numberLabel = this.nextElementSibling;
+      var currentNumber = parseInt(numberLabel.textContent, 10);
+        
+      console.log(numberLabel)
+      console.log(currentNumber)
+
+      if (this.classList.contains('pindot')) {
+
+        var newNumber = currentNumber - 1;
+        numberLabel.textContent = newNumber;
+        this.classList.remove('pindot');
+
+      } else {
+        this.classList.add('pindot');
+        var newNumber = currentNumber + 1;
+        numberLabel.textContent = newNumber;
+      }
+      console.log('Element clicked!');
+    }
+
+    hearts.forEach(function(heart) {
+      heart.addEventListener('click', handleClick);
+    });
+
+    smiles.forEach(function(smile) {
+      smile.addEventListener('click', handleClick);
+    });
+
+    /* Total Reviews*/
+    var ratings = [];
+    var totalReviews = Math.floor(Math.random() * 15) + 1;
+    var sum = generateTotal();
+    var addedRev = 3
+
+    /*Random Total Reviews*/
+    function generateTotal() {
+      for (var i = 0; i < totalReviews; i++) {
+        var rating = Math.floor(Math.random() * 5) + 1;
+        ratings.push(rating);
+      }
+
+      // Calculate the sum of ratings
+      var sum = ratings.reduce((a, b) => a + b, 0);
+      return sum;
+    }
+
+    function placeRandoms() {
+      var names = ['Juan Dela Cruz','Maria Santos','Pedro Reyes','Ana Gonzales','Jose Fernandez','Cristina Lim','Manuel Tan','Teresa Ocampo','Ricardo Cruz',
+        'Sofia Reyes','Luisa Ramirez','Miguel Sy','Angelica Castro'];
+      var rr1 = ['I had a disappointing experience at this food stall. The food was tasteless and poorly cooked. The portion size was also very small, leaving me hungry. I would not recommend it to anyone.', 'I was highly disappointed with the food stalls offerings. The service was slow, and the staff seemed disinterested. The food itself was bland and lacked any flavor. I regretted spending my money there.'];
+      var rr2 = ['The food stall had an average selection of dishes, but the taste was just okay. It did not impress me, but it also did not leave a bad taste in my mouth. Its an average place to grab a quick bite.','I found the food stall to be quite mediocre. The food lacked flavor and freshness, and the presentation was unappealing. Its not the worst place to eat, but there are definitely better options out there.'];
+      var rr3 = ['',''];
+      var rr4 = ['',''];
+      var rr5 = ['',''];
+
+    }
+
+    function placeTotalReviews(add) {
+      var label = document.getElementById('totalReviewLabel');
+      label.textContent = (totalReviews+add).toString();
+    }
+
+    /* Total Star Numbercode*/
+    function totalStar() {
+      var label1 = parseInt(document.getElementById("ratenum1").textContent, 10);
+      var label2 = parseInt(document.getElementById("ratenum2").textContent, 10);
+      var label3 = parseInt(document.getElementById("ratenum3").textContent, 10);
+      var average = Math.round((sum+label1+label2+label3)/(totalReviews+addedRev));
+      var totalrate = document.getElementById("totalrating");
+      totalrate.textContent = average.toString();
+    }
+
+    /* Star Coloring Rating*/
+    function starColor1() {
+      var label = parseInt(document.getElementById("ratenum1").textContent, 10);
+      var stars1 = document.getElementsByClassName("r1star")
+      
+      for (var i = 0; i < stars1.length; i++) {
+        if (i < label) {
+          stars1[i].style.color = "var(--green)";
+        } else {
+          stars1[i].style.color = "var(--black)";
         }
+      }
+    }
 
-        nextSlide();
-        slideInterval = setInterval(nextSlide, 3000); 
-        document.querySelector(".slider").addEventListener("mouseover", function() {
-            clearInterval(slideInterval);
-        });
-        document.querySelector(".slider").addEventListener("mouseout", function() {
-            slideInterval = setInterval(nextSlide, 3000);
-        });
+    function starColor2() {
+      var label = parseInt(document.getElementById("ratenum2").textContent, 10);
+      var stars2 = document.getElementsByClassName("r2star")
 
-        // REVIEW FORM
-        function showLightbox() {
-            var lightbox = document.getElementById('lightbox');
-            lightbox.style.opacity = 0;
-            lightbox.style.display = 'flex';
-            var distance = -100;
-            var interval = setInterval(function() {
-                distance += 5;
-                lightbox.style.transform = 'translateY(' + distance + 'px)';
-                lightbox.style.opacity = parseFloat(lightbox.style.opacity) + 0.05;
-                if (distance >= 0) {
-                    clearInterval(interval);
-                }
-            }, 10);
+      for (var i = 0; i < stars2.length; i++) {
+        if (i < label) {
+          stars2[i].style.color = "var(--green)";
+        } else {
+          stars2[i].style.color = "var(--black)";
         }
+      }
+    }
 
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
+    function starColor3() {
+      var label = parseInt(document.getElementById("ratenum3").textContent, 10);
+      var stars3 = document.getElementsByClassName("r3star")
+
+      for (var i = 0; i < stars3.length; i++) {
+        if (i < label) {
+          stars3[i].style.color = "var(--green)";
+        } else {
+          stars3[i].style.color = "var(--black)";
         }
+      }
+    }
 
-        function Exit() {
-            document.getElementById('lightbox').style.display = 'none';
+    function totalstarColor() {
+      var label = parseInt(document.getElementById("totalrating").textContent, 10);
+      var tstars = document.getElementsByClassName("tstar")
+
+      for (var i = 0; i < tstars.length; i++) {
+        if (i < label) {
+          tstars[i].style.color = "var(--yellow-gold)";
+        } else {
+          tstars[i].style.color = "var(--black)";
         }
+      }
+    }
 
-        function handleClick() {
-            this.classList.toggle('clicked');
-            var numberLabel = this.nextElementSibling;
-            var currentNumber = parseInt(numberLabel.textContent, 10);
 
-            console.log(numberLabel)
-            console.log(currentNumber)
+    /* Getting Form info and putting it per review box */
+    function getFormStar() {
+      var valueSelected = 0;
+      var radioBTN = document.getElementsByName('rating');
 
-            if (this.classList.contains('pindot')) {
-
-                var newNumber = currentNumber - 1;
-                numberLabel.textContent = newNumber;
-                this.classList.remove('pindot');
-
-            } else {
-                this.classList.add('pindot');
-                var newNumber = currentNumber + 1;
-                numberLabel.textContent = newNumber;
-            }
-            console.log('Element clicked!');
+      for (var i = 0; i < radioBTN.length; i++) {
+        if (radioBTN[i].checked) {
+          valueSelected = radioBTN[i].value;
+          break;
         }
+    }
+      return valueSelected;
+    }
 
-        var hearts = [];
-        var smiles = [];
+    function getFormReview() {
+      var reviewInput = document.getElementById('feedback').value;
+      if (reviewInput === '') {
+        return 'Has not given any review description for the food stall.';
+      } else
+        return reviewInput;
+    }
 
-        for (var i = 1; i <= 3; i++) {
-            hearts.push(document.getElementById('heartsymbol' + i));
-            smiles.push(document.getElementById('smilesymbol' + i));
-        }
+    function getFormName() {
+      var nameInput = document.getElementById('name').value;
+      if (nameInput === '') {
+        return 'Anonymous';
+      } else
+        return nameInput;
+    }
 
-        for (var i = 0; i < 3; i++) {
-            hearts[i].addEventListener('click', handleClick);
-            smiles[i].addEventListener('click', handleClick);
-        }
+    
+    function placingNames(name) {
+      var nameArray = [
+      document.getElementById('reviewName1'),
+      document.getElementById('reviewName2'),
+      document.getElementById('reviewName3')
+      ];
 
-        document.getElementById('reviewformbtn').addEventListener('click', showLightbox);
+      nameArray[2].textContent = nameArray[1].textContent;
+      nameArray[1].textContent = nameArray[0].textContent;
+      nameArray[0].textContent = name.toString();
+      
+    }
 
-        // Prevent slideshow in review box
-        const reviewBox = document.querySelector(".Wholepage");
-        reviewBox.addEventListener("mouseover", function() {
-            clearInterval(slideInterval);
-        });
-        reviewBox.addEventListener("mouseout", function() {
-            slideInterval = setInterval(nextSlide, 3000);
-        });
+    function placingReview(review) {
+      var revArray = document.getElementsByClassName('Review');
+
+      revArray[2].textContent = revArray[1].textContent;
+      revArray[1].textContent = revArray[0].textContent;
+      revArray[0].textContent = review.toString();
+    }
+
+    function placingStar(stars) {
+      var starArray = [
+      document.getElementById('ratenum1'),
+      document.getElementById('ratenum2'),
+      document.getElementById('ratenum3')
+      ];
+
+      starArray[2].textContent = starArray[1].textContent;
+      starArray[1].textContent = starArray[0].textContent;
+      starArray[0].textContent = stars.toString();
+      sum += parseInt(stars, 10);
+    }
+
+    function movingHS() {
+      var h1elem = document.getElementById('heartsymbol1');
+      var h2elem = document.getElementById('heartsymbol2');
+      var h3elem = document.getElementById('heartsymbol3');
+      var s1elem = document.getElementById('smilesymbol1');
+      var s2elem = document.getElementById('smilesymbol2');
+      var s3elem = document.getElementById('smilesymbol3');
+
+      var smileArray = [
+      document.getElementById('smilenum1'),
+      document.getElementById('smilenum2'),
+      document.getElementById('smilenum3')
+      ];
+
+      var heartsArray = [
+      document.getElementById('heartnum1'),
+      document.getElementById('heartnum2'),
+      document.getElementById('heartnum3')
+      ];
+
+      if (heartsArray[1].textContent == '1') {
+        h2elem.classList.remove('clicked');
+        h2elem.classList.remove('pindot');
+        h3elem.classList.add('clicked');
+        h3elem.classList.add('pindot');
+      } else {
+        h3elem.classList.remove('clicked');
+        h3elem.classList.remove('pindot');
+      }
+
+      if (smileArray[1].textContent == '1') {
+        s2elem.classList.remove('clicked');
+        s2elem.classList.remove('pindot');
+        s3elem.classList.add('clicked');
+        s3elem.classList.add('pindot');
+      } else {
+        s3elem.classList.remove('clicked');
+        s3elem.classList.remove('pindot');
+      }
+
+      if (heartsArray[0].textContent == '1') {
+        h1elem.classList.remove('clicked');
+        h1elem.classList.remove('pindot');
+        h2elem.classList.add('clicked');
+        h2elem.classList.add('pindot');
+      } else {
+        h2elem.classList.remove('clicked');
+        h2elem.classList.remove('pindot');
+      }
+
+      if (smileArray[0].textContent == '1') {
+        s1elem.classList.remove('clicked');
+        s1elem.classList.remove('pindot');
+        s2elem.classList.add('clicked');
+        s2elem.classList.add('pindot');
+      } else {
+        s2elem.classList.remove('clicked');
+        s2elem.classList.remove('pindot');
+      }
+
+      heartsArray[2].textContent = heartsArray[1].textContent;
+      heartsArray[1].textContent = heartsArray[0].textContent;
+      heartsArray[0].textContent = '0'.toString();
+
+      smileArray[2].textContent = smileArray[1].textContent;
+      smileArray[1].textContent = smileArray[0].textContent;
+      smileArray[0].textContent = '0'.toString();
+    }
+
+    /* Reset Form*/
+    var reviewform = document.getElementById('reviewform');
+    var openForm = document.getElementById('reviewformbtn');
+
+    openForm.addEventListener('click', function() {
+      reviewform.reset();
+      showLightbox();
+    });
+
+
+    /* Button to close the Form when submitting*/
+    // Listen to form submission event
+    document.getElementById('reviewform').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var starFormValue = getFormStar();
+            var reviewValue = getFormReview();
+            var nameValue = getFormName();
+
+            if (starFormValue != 0 && (nameValue != 'Anonymous' || reviewValue != 'Has not given any review description for the food stall.')) {
+                addedRev++;
+                placingNames(nameValue);
+                placingReview(reviewValue);
+                placingStar(starFormValue);
+                movingHS();
+                placeTotalReviews(addedRev);
+                starColor1();
+                starColor2();
+                starColor3();
+                totalStar();
+                totalstarColor();
+                closeLightbox(); 
+                resize();
+              } else {
+                alert("Pick Your Rating and Write your Name or Review");
+              }
+            });
+
+    /*Loading Functions ar page reload or startup*/
+    window.onload = function() {
+      placeTotalReviews(addedRev);
+      starColor1();
+      starColor2();
+      starColor3();
+      totalStar();
+      totalstarColor();
+      resize();
+    }
+
+    /* Box make it equal to each other*/
+
+    function resize() {
+      var div1 = document.getElementById('reviewsBox');
+      var div2 = document.getElementById('tallyBox');
+      var div3 = document.getElementById('buttonBox');
+      var div4 = document.getElementById('RIB');
+  
+      var div1Height = div1.clientHeight;
+
+      div2.style.height = div1Height + 'px';
+      div3.style.height = div1Height + 'px';
+      div4.style.height = div1Height + 25 + 'px';
+    }
+    window.addEventListener('resize', resize);
     </script>
 </body>
 
