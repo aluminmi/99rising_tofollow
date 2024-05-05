@@ -1,0 +1,561 @@
+/* Color Variables (Website Color Palette) */
+:root {
+  --green-dark: #2C5234;
+  --green: #4B8F58;
+  --green-light: #B4C8A8;
+  --green-pale: #E4EAD9;
+  --yellow-gold: #F0C05A;
+  --yellow-gold-light: #F7D49A;
+  --yellow-gold-dark: #C49540;
+  --white: #FFFFFF;
+  --grey-light: #F6F6F6;
+  --grey: #E5E5E5;
+  --grey-dark: #333333;
+  --black: #000000;
+}
+
+/* Tag Css */
+body {
+  font-family: Georgia;
+  background-color: var(--green-pale);
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+.desc{
+  font-size: 50px;
+}
+
+div {
+  border-radius: 10px;
+}
+
+
+/* Classes CSS */
+
+.Wholepage {
+  background-color: var(--green-light);
+  width: 99%;
+  height: auto;
+  margin: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.fsIMGBox {
+  background-color: var(--green-dark);
+  width: 45%;
+  height: auto;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fsIMG {
+  width: 90%;
+  height: 75.58%;
+  margin: 20px;
+  border-radius: 5px;
+}
+.RestoAboutBox {
+  background-color: var(--green-pale);
+  width: 45%;
+  height: auto;
+  margin: 20px;
+  text-align: center;
+}
+
+.ReviewsInfoBox {
+  width: 100%;
+  height: 550px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.fsAbout {
+  margin: 20px;
+}
+
+.PictureRating {
+  width: 94%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5px;
+}
+
+/* Total Star Rating */
+
+.tstar {
+  color: var(--black);
+  font-size: 35px;
+}
+
+.ReviewsBox {
+  background-color: var(--yellow-gold-light);
+  width: 32%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.RatingTallyBox {
+  background-color: var(--yellow-gold-light);
+  width: 32%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ButtonOpen {
+  background-color: var(--yellow-gold-light);
+  width: 32%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.reviews {
+  width: 93.75%;
+  height: auto;
+  font-size: 15px;
+  margin: 20px;
+}
+
+.reviewlabel {
+  height: auto;
+  margin: 20px;
+  float: left;
+  font-weight: bold;
+}
+
+.totalreviewers {
+  height: auto;
+  margin: 20px;
+  float: right;
+  font-weight: bold;
+}
+
+.ReviewName1, .ReviewName2, .ReviewName3, .Review {
+  margin: 15px;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.reviewstarname {
+  width: 93.75%;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.R1stars, .R2stars, .R3stars {
+  text-align: left;
+  margin: 10px;
+}
+
+.seenheart1, .seenheart2, .seenheart3  {
+  font-size: 20px;
+  height: 20px;
+  display: flex;
+  align-items: right;
+  justify-content: center;
+}
+
+.heart1, .heart2, .heart3, .smile1, .smile2, .smile3 {
+  font-size: 25px;
+  color: var(--grey-dark);
+}
+
+.seenheartNum {
+  font-size: 25px;
+  margin-left: 8px;
+}
+
+.heart1:hover, .heart2:hover, .heart3:hover, .smile1:hover, .smile2:hover, .smile3:hover {
+  color: var(--green);
+}
+
+.heart1.clicked, .heart2.clicked, .heart3.clicked, .smile1.clicked, .smile2.clicked, .smile3.clicked {
+  color: var(--green);
+}
+
+.smile1, .smile2, .smile3 {
+  margin-left: 30px;
+}
+
+.tally-bars{
+  padding: 25px 30px;
+  width: 75%;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+.tally-bars .bar{
+  margin: 20px 0;
+}
+.tally-bars .bar:first-child{
+  margin-top: 0px;
+}
+.tally-bars .bar .info{
+  margin-bottom: 5px;
+}
+.tally-bars .bar .info span{
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+  100%{
+    opacity: 1;
+  }
+}
+.tally-bars .bar .progress-line{
+  height: 10px;
+  width: 100%;
+  background: var(--white);
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+              0 1px rgba(255,255,255,0.8);
+  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.bar .progress-line span{
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--green);
+  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+.bar .progress-line.star5 span{
+  width: 70%;
+}
+.bar .progress-line.star4 span{
+  width: 50%;
+}
+.bar .progress-line.star3 span{
+  width: 50%;
+}
+.bar .progress-line.star2 span{
+  width: 50%;
+}
+.bar .progress-line.star1 span{
+  width: 50%;
+}
+.progress-line span::before{
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: var(--green-dark);
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+.progress-line span::after{
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: var(--green-light);
+  color: var(--black);
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+  100%{
+    opacity: 1;
+  }
+}
+.progress-line.star5 span::after{
+  content: "5 Voted";
+}
+.progress-line.star4 span::after{
+  content: "3 Voted";
+}
+.progress-line.star3 span::after{
+  content: "2 Voted";
+}
+.progress-line.star2 span::after{
+  content: "1 Voted";
+}
+.progress-line.star1 span::after{
+  content: "0 Voted";
+}
+
+/* Review Form */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-content {
+  background-color: white;
+  padding: 20px;
+  max-width: 600px;
+  border: 1px solid #0BDA51;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.lightbox.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+form {
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  background-color: #fff;
+  outline-color: green;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formSubmit,.reviewbtn, .homebtn, .mapbtn, .lightbox-close {
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.formSubmit:hover, .reviewbtn:hover, .lightbox-close:hover, .mapbtn:hover, .homebtn:hover {
+    background-color: var(--green-dark);
+}
+
+.reviewtxt,.reviewtxtarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-color: #0BDA51;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--black);
+  margin-right: 5px;
+  font-size: 100px;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+  color: var(--yellow-gold-light);
+ } 
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #0BDA51; 
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+legend {
+  font-family: Garamond;
+  font-size: 30px; 
+  font-weight: bold;
+  color: #808000;
+  margin-bottom: 10px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Header CSS and Side Bar */
+
+/* Header Style */
+header {
+  padding: 10px;
+  text-align: center;
+}
+
+
+  /* Sticky Header */
+.header{
+  background-color: var(--green-dark);
+  color: var(--green-pale);
+  width: 100%;
+  height: auto;
+  font-size: 24px;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  vertical-align: middle;
+}.sticky{
+  position: fixed;
+  top: 0;
+}
+
+  /* Header Sidebar Button */
+.headerbtn{
+  border: none;
+  display: block; 
+  overflow: hidden;
+  padding: 12px 12px;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--green-dark);
+  cursor: pointer;
+  float: left;
+}.headerbtn:disabled{
+  cursor: not-allowed;
+  opacity: 0.3;
+}.headerbtn:hover{
+  background-color: var(--green);
+}
+
+  /* Header Search Bar */
+
+.searchbar{
+  background-color: var(--green-dark);
+  color: var(--green-pale);
+  padding: 15px 15px;
+  vertical-align: middle;
+}
+.searchbar button[type="submit"]{
+  background-color: inherit;*/
+  border: none ; 
+  cursor: pointer;
+}
+.searchbar button i:hover{
+  color: var(--yellow-gold-light);
+}
+.searchbar input[type="text"]{
+  background-color: inherit;
+  color: inherit;
+  font-size: 16px;
+  padding: 6px;
+  width: 200px;
+  border: none;
+}
+.searchbar input:placeholder-shown{
+  font-style: italic;
+}
+.searchbar input[type="text"]:hover{
+  border-style: solid;
+  border-radius: 20px;
+  border-width: thin;
+  border-color: var(--green-pale);
+}
+.searchbar input[type="text"]:active{
+  border-style: solid;
+  border-radius: 20px;
+  border-width: thin;
+  border-color: var(--green-pale);
+}
+
+  /* Sidebar Style */
+.sidebar{
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: var(--green-dark);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}.sidebar a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 24px;
+  background-color: var(--green-dark);
+  color: var(--green-pale);
+  display: block;
+  transition: 0.3s;
+}.sidebar a:hover{
+  color: var(--yellow-gold-light);
+  cursor: pointer;
+}.closebtn{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
+  font-size: 36px;
+}.darken{
+  filter: blur(3px);
+  margin-left: 250px;
+  transition: 0.5s;
+}
