@@ -1,9 +1,13 @@
-root {
+:root {
     --beige: #f0ebe3;
     --beige-dark: #693e23;
     --black: #000000;
+    --green: #4B8F58;
 }
 
+html {
+  scroll-behavior: inherit;
+}
 
 .dancing-script-logo {
     font-family: "Dancing Script", cursive;
@@ -445,66 +449,5 @@ footer {
     right: 10px;
     font-size: 20px;
     cursor: pointer;
-}
-
-/* Form styles */
-#reviewform {
-    text-align: center;
-}
-
-.ReviewsInfoBox{
-    border-radius: 10px;
-    background-color: var(--beige-dark);
-}
-
-.label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.reviewtxt,
-.reviewtxtarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.rating {
-    display: inline-block;
-}
-
-.rating input[type="radio"] {
-    display: none;
-}
-
-.rating label {
-    font-size: 30px;
-    color: #ccc;
-    cursor: pointer;
-}
-
-.rating label:hover,
-.rating label:hover ~ label {
-    color: orange;
-}
-
-.submit {
-    text-align: center;
-}
-
-
-.formSubmit {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.formSubmit:hover {
-    background-color: #0056b3;
 }
 
