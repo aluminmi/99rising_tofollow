@@ -59,7 +59,6 @@
         <div class = "title">
                  <label class="reviewlabel">Reviews</label>
         </div>
-        <br><br><br>
         <div class="Wholepage">
             <div class="ReviewsInfoBox" id="RIB">
                 <div class="ReviewsBox" id="reviewsBox">
@@ -72,15 +71,10 @@
                             <label class="ReviewName1" id="reviewName1">Jamie Smith</label>
                             <div class="R1stars">
                                 <label>Rated:</label>
-                                <label id="ratenum1">5</label>  
-                                <label class="r1star" id="r1star1">&#9733;</label>
-                                <label class="r1star" id="r1star2">&#9733;</label>
-                                <label class="r1star" id="r1star3">&#9733;</label>
-                                <label class="r1star" id="r1star4">&#9733;</label>
-                                <label class="r1star" id="r1star5">&#9733;</label>
+                                <label id="ratenum1">5 &#9733;</label>  
                             </div>
                         </div>
-                        <p class="Review">One of the best nail Technicians in Las Pi!</p>
+                        <p class="Review">One of the best nail technicians in Las Pi!</p>
                         <div class="seenheart1">
                             <label class="heart2" id="heartsymbol1">&#9829;</label>
                             <label class="seenheartNum" id="heartnum1">0</label>
@@ -93,12 +87,7 @@
                             <label class="ReviewName2" id="reviewName2">Isabella Cyrille</label>
                             <div class="R2stars">
                                 <label>Rated:</label>
-                                <label id="ratenum2">4</label> 
-                                <label class="r2star" id="r2star1">&#9733;</label>
-                                <label class="r2star" id="r2star2">&#9733;</label>
-                                <label class="r2star" id="r2star3">&#9733;</label>
-                                <label class="r2star" id="r2star4">&#9733;</label>
-                                <label class="r2star" id="r2star5">&#9733;</label>
+                                <label id="ratenum2">4 &#9733;</label> 
                             </div>
                         </div>
                         <p class="Review">She's good at doing her job. </p>
@@ -114,12 +103,7 @@
                             <label class="ReviewName3" id="reviewName3">Anya Dela Cruz</label>
                             <div class="R3stars">
                                 <label>Rated:</label>
-                                <label id="ratenum3">3</label> 
-                                <label class="r3star" id="r3star1">&#9733;</label>
-                                <label class="r3star" id="r3star2">&#9733;</label>
-                                <label class="r3star" id="r3star3">&#9733;</label>
-                                <label class="r3star" id="r3star4">&#9733;</label>
-                                <label class="r3star" id="r3star5">&#9733;</label>
+                                <label id="ratenum3">3 &#9733;</label>
                             </div>
                         </div>
                         <p class="Review">My nail chipped off immediately. Probably my fault, though. </p>
@@ -206,12 +190,13 @@
 
     nextSlide();
     slideInterval = setInterval(nextSlide, 3000);
-    document.querySelector(".slider").addEventListener("mouseover", function () {
+    document.querySelector(".slider .wrapper").addEventListener("mouseover", function () {
         clearInterval(slideInterval);
     });
-    document.querySelector(".slider").addEventListener("mouseout", function () {
+    document.querySelector(".slider .wrapper").addEventListener("mouseout", function () {
         slideInterval = setInterval(nextSlide, 3000);
     });
+
 
 
   /* Form */
@@ -441,9 +426,9 @@
       document.getElementById('ratenum3')
       ];
 
-      starArray[2].textContent = starArray[1].textContent;
-      starArray[1].textContent = starArray[0].textContent;
-      starArray[0].textContent = stars.toString();
+      starArray[2].innerHTML = starArray[1].innerHTML;
+      starArray[1].innerHTML = starArray[0].innerHTML;
+      starArray[0].innerHTML = stars.toString() + " &#9733;";
       sum += parseInt(stars, 10);
     }
 
