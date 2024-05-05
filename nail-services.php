@@ -22,7 +22,9 @@
     <main>
         <section class="service-details">
             <div>
+                <br>
                 <h2> General </h2>
+                <br>
             </div>
             <div class="service-item">
                 <div class="service-image">
@@ -32,6 +34,7 @@
                     <h2>Manicure</h2>
                     <p>A cosmetic beauty treatment for the fingernails and hands, including filing, shaping, and polishing.</p>
                     <p>Price: PHP 100</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -43,6 +46,7 @@
                     <h2>Pedicure</h2>
                     <p>A cosmetic beauty treatment for the toenails and feet, including trimming, shaping, and polishing.</p>
                     <p>Price: PHP 100</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -54,6 +58,7 @@
                     <h2>Foot Spa</h2>
                     <p>A relaxing treatment for the feet, often including soaking, exfoliating, massage, and moisturizing.</p>
                     <p>Price: PHP 300</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -65,11 +70,14 @@
                     <h2>Hand Paraffin</h2>
                     <p>A moisturizing treatment for the hands, using warm paraffin wax to soften and hydrate the skin.</p>
                     <p>Price: PHP 150</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
             <div>
+                <br>
                 <h2> Soft Gel Extension </h2>
+                <br>
             </div>
 
             <div class="service-item">
@@ -80,6 +88,7 @@
                     <h2>Plain</h2>
                     <p>Adding length and durability to nails using soft gel without additional design or embellishments.</p>
                     <p>Price: PHP 450</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -91,6 +100,7 @@
                     <h2>Basic Design</h2>
                     <p>Adding length and durability to nails using soft gel with simple designs or patterns.</p>
                     <p>Price: PHP 500</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -102,6 +112,7 @@
                     <h2>Unli Stones</h2>
                     <p>Adding length and durability to nails using soft gel with unlimited rhinestone embellishments.</p>
                     <p>Price: PHP 600</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -113,11 +124,14 @@
                     <h2>Removal</h2>
                     <p>Safely removing soft gel extensions from nails without damaging the natural nails.</p>
                     <p>Price: PHP 100</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
 
             <div>
+                <br>
                 <h2> Gel Polish </h2>
+                <br>
             </div>
             
             <div class="service-item">
@@ -128,6 +142,7 @@
                     <h2>Plain</h2>
                     <p>Applying soft gel polish without additional design or embellishments.</p>
                     <p>Price: PHP 300</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -139,6 +154,7 @@
                     <h2>Design</h2>
                     <p>Applying soft gel polish with simple designs or patterns.</p>
                     <p>Price: PHP 350</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -150,6 +166,7 @@
                     <h2>Unli Stone</h2>
                     <p>Applying soft gel polish with unlimited rhinestone embellishments.</p>
                     <p>Price: PHP 400</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
         </section>

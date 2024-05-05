@@ -29,6 +29,7 @@
                     <h2>Haircut</h2>
                     <p>A classic haircut to suit your style.</p>
                     <p>Price: PHP 100</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -40,6 +41,7 @@
                     <h2>Hot Oil</h2>
                     <p>Deep conditioning treatment for nourished hair.</p>
                     <p>Price: PHP 250</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -51,6 +53,7 @@
                     <h2>Hair Spa</h2>
                     <p>Relaxing spa treatment for your hair and scalp.</p>
                     <p>Price: PHP 350</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -62,6 +65,7 @@
                     <h2>Keratin Treatment</h2>
                     <p>Smoothing treatment to reduce frizz and add shine.</p>
                     <p>Price: PHP 450</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -73,6 +77,7 @@
                     <h2>Power Dose</h2>
                     <p>Intensive treatment for stronger and healthier hair.</p>
                     <p>Price: PHP 500</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -84,6 +89,7 @@
                     <h2>Hair Color</h2>
                     <p>Change your look with a vibrant hair color.</p>
                     <p>Starting Price: PHP 500</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -95,6 +101,7 @@
                     <h2>Bleaching</h2>
                     <p>Lighten your hair for a bold new style.</p>
                     <p>Starting Price: PHP 700</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -106,6 +113,7 @@
                     <h2>Highlights</h2>
                     <p>Add dimension and brightness to your hair.</p>
                     <p>Starting Price: PHP 700</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -117,6 +125,7 @@
                     <h2>Brazilian Botox</h2>
                     <p>Revitalize your hair with a botox treatment.</p>
                     <p>Starting Price: PHP 800</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -128,6 +137,7 @@
                     <h2>Brazilian Blowout</h2>
                     <p>Smooth and straighten your hair with this treatment.</p>
                     <p>Starting Price: PHP 800</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -139,6 +149,7 @@
                     <h2>Balayage</h2>
                     <p>Create a natural-looking hair color blend.</p>
                     <p>Starting Price: PHP 700</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             
@@ -150,6 +161,7 @@
                     <h2>Rebond</h2>
                     <p>Straighten and smoothen your hair permanently.</p>
                     <p>Starting Price: PHP 1000</p>
+                    <a href="#" class="btn">Book an Appointment</a>
                 </div>
             </div>
             

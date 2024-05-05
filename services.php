@@ -48,7 +48,7 @@
                     <p>General</p>
                 </div>
                 <div class="service-type">
-                    <img src="soft-gel-extension.jpg" alt="Soft Gel Extension">
+                    <img src="gel-extension.jpg" alt="Soft Gel Extension">
                     <p>Soft Gel Extension</p>
                 </div>
                 <div class="service-type">

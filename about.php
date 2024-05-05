@@ -25,11 +25,11 @@
             <div class="about-content">
                 <div class="business-info">
                     <div class="business-image">
-                        <img src="business.jpg" alt="Business Image">
+                        <img src="logo.png" alt="Business Image">
                     </div>
                     <div class="business-details">
-                        <h3>About Our Business</h3>
-                        <p>Information about the business...</p>
+                        <h3>About the Business</h3>
+                        <p>Kristine's Beauty Station is a self-managed by Kristine Zamora, an employee for almost a decade in a small beauty salon who decided to fly solo. The business offers multiple beauty care, focusing on hair and nails. It offers home service catering the needs of the residents in Pilar Village, Las Pinas City.</p>
                     </div>
                 </div>
                 <div class="separator"></div>
@@ -39,7 +39,9 @@
                     </div>
                     <div class="owner-details">
                         <h3>About the Owner</h3>
-                        <p>Information about the owner...</p>
+                        <p>Kristine Camille Zamora is a beauty technician residing in Royal South Village, Las Pinas City. A mother of two kids, Kristine manages her business while also taking care of her family. With her vast experience in the beauty industry for over ten years, Kristine has honed her skills to perfection.
+
+                        Moreover, Kristine's journey began in a nail salon, where she dedicated her time and effort to mastering the art of nail care. However, she eventually felt the urge to break free from the constraints of employment and embark on her entrepreneurial journey.</p>
                     </div>
                 </div>
             </div>
