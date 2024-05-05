@@ -1,3 +1,10 @@
+root {
+    --beige: #f0ebe3;
+    --beige-dark: #693e23;
+    --black: #000000;
+}
+
+
 .dancing-script-logo {
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
@@ -46,7 +53,7 @@ header {
     height: auto;
 }
 
-header,
+header, 
 nav ul li a {
     font-family: helvetica, cursive;
     font-weight: bold;
@@ -76,6 +83,18 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: none;
     border-bottom: 2px solid #322c2b;
+}
+
+.title {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.title label {
+    font-size: 75px;
+    color: var(--beige-dark);
+    font-family: "Dancing Script", cursive;
 }
 
 .hero {
@@ -265,7 +284,7 @@ footer {
 .services {
     background-color: #f9f6f4;
     padding: 40px;
-    margin-top: 80px; /* Adjusted margin-top to avoid header overlap */
+    margin-top: 80px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -290,7 +309,7 @@ footer {
 }
 
 .service-link:hover {
-    text-decoration: underline beige; /* Beige underline on hover */
+    text-decoration: underline beige; 
 }
 
 .service-category h3 {
@@ -433,6 +452,11 @@ footer {
     text-align: center;
 }
 
+.ReviewsInfoBox{
+    border-radius: 10px;
+    background-color: var(--beige-dark);
+}
+
 .label {
     display: block;
     margin-bottom: 10px;
@@ -469,6 +493,7 @@ footer {
 .submit {
     text-align: center;
 }
+
 
 .formSubmit {
     padding: 10px 20px;
