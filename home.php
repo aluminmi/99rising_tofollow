@@ -45,10 +45,10 @@
                         <img src="hair-1.jpg" alt="Hair Service 1">
                     </div>
                     <div>
-                        <img src="nail-art-2.jpg" alt="Hair Service 1">
+                        <img src="nail-art-2.jpg" alt="Nail Art 2">
                     </div>
                     <div>
-                        <img src="nail-art-3.jpg" alt="Hair Service 1">
+                        <img src="nail-art-3.jpg" alt="Nail Art">
                     </div>
                 </div>
             </div>
@@ -157,12 +157,22 @@
                 </form>
             </div>
         </div>
-        <section class="hero">
-            <img src="logo.png" alt="Logo" class="logo-image">
-            <h2>Sit back, relax, & pamper.</h2>
-            <a href="#" class="btn">Book an Appointment</a>
-        </section>
+    <br><br>
 
+    <div class="third wrapper">
+                <div class="left-3">
+                    <section class="hero">
+                        <img src="logo.png" alt="Logo" class="logo-image">
+                        <h2>Sit back, relax, & pamper.</h2>
+                        <h3>Royal  South Village talon 5 , Las Piñas, Philippines</h3>
+                    <br><br>
+                    <a href="#" class="btn">Book an Appointment</a>
+                    </section>
+                </div>
+                <div class="right-3">
+                    <img src="map.jpg" alt="maps">
+                    </div>
+                </div>
     </main>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> Kristine's Beauty Station. All rights reserved.</p>
