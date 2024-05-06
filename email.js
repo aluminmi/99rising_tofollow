@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var form = document.querySelector("form");
-
     var submitBtn = document.querySelector("input[type='submit']");
-
     var isSubmitting = false;
-
     var inputs = document.querySelectorAll("input, textarea");
 
     inputs.forEach(function(input) {
@@ -13,11 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 event.preventDefault();
 
                 var currentIndex = Array.from(inputs).indexOf(input);
-
                 var nextIndex = currentIndex + 1;
                 if (nextIndex < inputs.length) {
                     var nextInput = inputs[nextIndex];
-
                     nextInput.focus();
                 }
             }
@@ -33,11 +28,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
         isSubmitting = true;
 
-        submitBtn.disabled = true;
+        var email = document.querySelector("#email").value;
+        if (!validateEmail(email)) {
+            alert("Please enter a valid Gmail address.");
+            isSubmitting = false;
+            submitBtn.disabled = false;
+            return;
+        }
 
+        submitBtn.disabled = true;
         validateAndSendMessage();
     });
 });
+
+function validateEmail(email) {
+    return /\b[A-Z0-9._%+-]+@gmail\.com\b/i.test(email);
+}
 
 function validateAndSendMessage() {
     var name = document.querySelector("#name").value;
@@ -45,12 +51,18 @@ function validateAndSendMessage() {
     var subject = document.querySelector("#subject").value;
     var message = document.querySelector("#message").value;
 
-    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+    if (!name.trim() || !subject.trim() || !message.trim()) {
         alert("Please fill in all the required fields.");
-        document.querySelector("input[type='submit']").disabled = false;
         isSubmitting = false;
-    } else  {
-        sendMessage(name, email, subject, message);
+        document.querySelector("input[type='submit']").disabled = false;
+    } else {
+        if (validateEmail(email)) {
+            sendMessage(name, email, subject, message);
+        } else {
+            alert("Please enter a valid Gmail address.");
+            isSubmitting = false;
+            document.querySelector("input[type='submit']").disabled = false;
+        }
     }
 }
 
